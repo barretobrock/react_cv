@@ -9,4 +9,4 @@ def hello():
 if __name__ == '__main__':
     # Load this config object for development mode
     app.config.from_object('configurations.DevelopmentConfig')
-    app.run(host='0.0.0.0')
+    app.run()
