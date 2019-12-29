@@ -1,5 +1,13 @@
 
-class BaseConfig(object):
+class Config(object):
+    """
+    Default config
+    """
+    DEBUG = False
+    TESTING = False
+    # DATABASE_URI = 'mysql://user@localhost/foo'
+
+class BaseConfig(Config):
     """
     Base config class
     """
@@ -7,16 +15,17 @@ class BaseConfig(object):
     TESTING = False
 
 
-class ProductionConfig(object):
+class ProductionConfig(Config):
     """
     Production-specific config
     """
     DEBUG = False
 
 
-class DevelopmentConfig(object):
+class DevelopmentConfig(Config):
     """
     Development-specific config
     """
     DEBUG = True
     TESTING = True
+    TEMPLATES_AUTO_RELOAD = True

@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
+import Footer from "./Footer";
 
 
-export default class Home extends Component {
+
+class Home extends Component {
     render() {
         return (
-            <h1>Hello React!</h1>
+            <div id={'wrapper'}>
+                <header id={'header'}>
+                    <div className={'logo'}>
+                        <img className={'rotate'} src={'public/images/gear.png'}/>
+                    </div>
+                    <div className={'intro'}>
+                        <div className={'inner'}>
+                            <h1>Barret's development space</h1>
+                            <p>Welcome to my personal website</p>
+                        </div>
+                    </div>
+                    <Nav isMainNav={true}/>
+                </header>
+                <Footer/>
+            </div>
         )
     }
 }
+
+export default Home

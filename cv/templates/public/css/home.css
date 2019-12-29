@@ -1,0 +1,134 @@
+/*----------------------------------------------------------------------*/
+/* Home Page Styles */
+/*----------------------------------------------------------------------*/
+
+#wrapper {
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 2rem;
+    z-index: 3;
+}
+
+#wrapper:before {
+    content: '';
+    display: block;
+}
+
+#header {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    /* Creates a dark shading behind the nav */
+    background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+    background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+    background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+    max-width: 100%;
+    text-align: center;
+}
+
+#header .logo {
+    width: 5.5rem;
+    height: 5.45rem;
+    line-height: 5.5rem;
+    border-radius: 100%;
+}
+
+#header > * {
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+.logo img {
+    width: 100%;
+    margin: auto;
+    top: 4px;
+    position: relative;
+}
+
+#header .intro {
+    border: #fff solid;
+    border-width: 1px 0 1px 0;
+    max-width: 100%;
+
+}
+
+/* Vertical lines between elements */
+#header > *:not(:first-child):before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(-3.5rem - 1px);
+    left: calc(50% - 1px);
+    width: 1px;
+    height: calc(3.5rem + 1px);
+    background: #ffffff;
+}
+
+#header .intro .inner {
+    padding: 3rem 2rem;
+    max-height: 40rem;
+    overflow: hidden;
+}
+
+#header .intro h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+#header .intro p {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+    line-height: 2;
+}
+
+#header .intro .inner > :last-child {
+    margin-bottom: 0;
+}
+
+
+a {
+    border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Rotating gear */
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+footer p.copyright {
+    letter-spacing: 0.2rem;
+    font-size: 0.6rem;
+    opacity: 0.75;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
