@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import history from "./history";
+import { Route, Link, Router } from 'react-router-dom';
 import Home from './components/Home';
 import About from "./components/About";
 import CV from "./components/CV";
@@ -8,7 +9,7 @@ import Contact from "./components/Contact";
 import Tools from "./components/Tools";
 
 const routing = (
-    <Router>
+    <Router history={history} >
         <div>
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
