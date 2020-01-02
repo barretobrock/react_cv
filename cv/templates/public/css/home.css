@@ -2,16 +2,15 @@
 /* Home Page Styles */
 /*----------------------------------------------------------------------*/
 
-#wrapper {
+.wrapper {
     justify-content: space-between;
     position: relative;
     min-height: 100vh;
     width: 100%;
-    padding: 4rem 2rem;
     z-index: 3;
 }
 
-#wrapper:before {
+.wrapper:before {
     content: '';
     display: block;
 }
@@ -96,7 +95,6 @@
 #header .intro .inner > :last-child {
     margin-bottom: 0;
 }
-
 
 a {
     border-bottom: dotted 1px rgba(255, 255, 255, 0.5);

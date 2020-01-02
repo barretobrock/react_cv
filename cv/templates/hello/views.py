@@ -11,3 +11,24 @@ def index():
 @hello_blueprint.route('/about')
 def about():
     return render_template('about.html')
+
+
+@hello_blueprint.route('/cv')
+def cv():
+    return render_template('cv.html')
+
+
+@hello_blueprint.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+
+@hello_blueprint.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@hello_blueprint.route('/tools')
+def tools():
+    return render_template('tools.html')
+

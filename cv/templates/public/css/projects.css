@@ -1,0 +1,48 @@
+/*----------------------------------------------------------------------*/
+/* Styles for Projects page */
+/*----------------------------------------------------------------------*/
+
+.project-list {
+    list-style: none;
+}
+
+.project-list > li {
+    padding: 0 15px 0 15px;
+}
+
+.project-list > li:hover {
+    background-color: #42424261;
+}
+
+.project-list li h3.section-title{
+    outline: none;
+}
+
+.project-list li h3.section-title:after {
+    content: '+';
+    font-size: 20px;
+    color: var(--txt-grn);
+    float: right;
+    margin-left: 10px;
+}
+
+details[open] > div.project-panel {
+  transition: max-height 2s ease-in-out;
+}
+
+details:not([open]) > div.project-panel {
+    height: 0;
+}
+
+details[open] > div.project-panel {
+    height: 100%;
+}
+
+.project-panel .justify span {
+    display: inline;
+}
+
+/* Remove details arrow */
+::-webkit-details-marker {
+    display:none;
+}

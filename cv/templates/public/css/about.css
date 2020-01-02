@@ -1,0 +1,50 @@
+/*----------------------------------------------------------------------*/
+/* Styles for About page */
+/*----------------------------------------------------------------------*/
+
+.iconlistpic-row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.left-side {
+    float: left;
+    width:  50%;
+}
+.right-side {
+    float: right;
+    width:  50%;
+}
+
+.right-side img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#ff-section .right-side img {
+    width: 350px;
+    height: 350px;
+}
+
+tr.fact-item {
+    list-style: none;
+    height: 70px;
+    border-bottom: 1px dotted var(--bg-60);
+}
+
+tr.fact-item:last-child {
+    border-bottom: none;
+}
+
+tr.fact-item td svg {
+    margin: 0 1rem 0 1rem;
+    color: var(--txt-ylw);
+}
+.fact {
+
+}
+
+.answer {
+
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from 'react-tooltip';
 import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHome, faQuestionCircle, faIdCard, faFolderOpen, faComments, faToolbox } from "@fortawesome/free-solid-svg-icons";
 
@@ -38,14 +39,23 @@ const Nav = ({isMainNav}) => {
         if (isMain) {
             navArr = navArr.slice(1);
             return (
-                <ul>{navArr.map(item => <li className={'navItem'}><a href={item.path}>{item.label}</a></li>)}</ul>
+                <ul>
+                    {navArr.map((item, index) =>
+                        <li key={index} className={'navItem'}>
+                            <a href={item.path}>{item.label}</a>
+                        </li>)}
+                </ul>
             )
         }
         return (
             <ul>
-                {navArr.map(item => <li className={'navItem'}>
-                        <a href={item.path}><FontAwesomeIcon icon={item.icon} /></a>
-                </li>)}
+                {navArr.map((item, index) =>
+                    <li key={index} className={'navItem'}>
+                        <a href={item.path} data-tip={item.label}>
+                            <ReactTooltip place={'bottom'} effect={'solid'}/>
+                            <FontAwesomeIcon icon={item.icon} />
+                        </a>
+                    </li>)}
             </ul>
         )
     }

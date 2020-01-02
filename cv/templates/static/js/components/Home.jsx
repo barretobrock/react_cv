@@ -7,7 +7,7 @@ import Footer from "./Footer";
 class Home extends Component {
     render() {
         return (
-            <div id={'wrapper'}>
+            <div className={'wrapper'}>
                 <header id={'header'}>
                     <div className={'logo'}>
                         <img className={'rotate'} src={'public/images/gear.png'}/>

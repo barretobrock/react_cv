@@ -1,0 +1,94 @@
+/*----------------------------------------------------------------------*/
+/* Styles for CV page */
+/*----------------------------------------------------------------------*/
+
+#cv-intro .right-side img {
+    width: 250px;
+    height: 250px;
+}
+
+#cv-intro tr.fact-item {
+    height: 50px;
+}
+
+div.cv-row {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+div.cv-row > div:nth-child(1) {
+    width: 40%;
+    float: left;
+    height: 100%;
+    clear: both;
+}
+div.cv-row > div:nth-child(2) {
+    width: 60%;
+    float: right;
+    height: 100%;
+
+}
+
+p.edu-details span, p.job-details span {
+    display: block;
+}
+
+p.edu-details span svg, p.job-details span svg {
+    margin-right: 5px;
+}
+
+.justify > span {
+    display: block;
+}
+
+.jobtitle, .span-title {
+    color: var(--txt-ylw);
+}
+
+.tools {
+    list-style: none;
+    display: flex;
+}
+
+.tools li {
+    width: max-content;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: #424242ab;
+    border-radius: 15px;
+    padding: 0 5px 0 5px;
+}
+
+.skills {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+}
+
+.skills li {
+    list-style: none;
+}
+
+.skills li:hover {
+    background-color: #9999993b;
+}
+
+.skills li > *:first-child {
+    width: 120px;
+    display: inline-block;
+}
+
+.skillstar.on {
+    color: var(--txt-ylw);
+}
+
+.skillstar.off {
+    color: #424242ab
+}
+
+[data-skill = "5"] svg {
+    color: var(--txt-org) !important;
+}

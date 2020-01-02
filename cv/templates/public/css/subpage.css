@@ -1,0 +1,30 @@
+/*----------------------------------------------------------------------*/
+/* Styles for Subpages */
+/*----------------------------------------------------------------------*/
+
+.subpage-wrapper {
+    position: relative;
+}
+
+.subpage-wrapper article {
+    padding: 3.5rem 2.5rem 1.5rem 2.5rem;
+    width: 80%;
+    background-color: #1b1f22d9;
+    border-radius: 4px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+
+
+h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
+    border-bottom: solid 1px #fff;
+    width: max-content;
+    padding-bottom: 0.2rem;
+    margin: 0 0 2rem 0;
+}
+
+.section-title {
+    color: var(--txt-grn);
+}
