@@ -1,6 +1,6 @@
 import React from 'react';
 import history from "./history";
-import { Route, Link, Router } from 'react-router-dom';
+import {Route, Link, Router, HashRouter} from 'react-router-dom';
 import Home from './components/Home';
 import About from "./components/About";
 import CV from "./components/CV";
@@ -9,7 +9,7 @@ import Contact from "./components/Contact";
 import Tools from "./components/Tools";
 
 const routing = (
-    <Router history={history} >
+    <HashRouter history={hashHistory}>
         <div>
             <Route exact path='/' component={Home} />
             <Route path='/about' component={About} />
@@ -18,7 +18,7 @@ const routing = (
             <Route path='/contact' component={Contact} />
             <Route path='/tools' component={Tools} />
         </div>
-    </Router>
+    </HashRouter>
 );
 
 export default routing
