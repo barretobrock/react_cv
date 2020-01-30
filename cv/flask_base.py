@@ -4,11 +4,12 @@ from flask import render_template, Flask
 from slackeventsapi import SlackEventAdapter
 
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-dotenv.load_dotenv(dotenv_path)
-viktor_sss = os.environ['VIKTOR_SLACK_SIGNING_SECRET']
-cah_sss = os.environ['CAH_SLACK_SIGNING_SECRET']
-dnd_sss = os.environ['DND_SLACK_SIGNING_SECRET']
+key_path = os.path.join(os.path.expanduser('~'), 'keys')
+keys = ['viktor', 'cah', 'dnd']
+keys_dict = {}
+for k in keys:
+    with open(os.path.join(key_path, f'{k.upper()}_SLACK_SIGNING_SECRET')) as f:
+        keys_dict[k] = f.read().strip()
 
 app = Flask(__name__, static_folder='./templates/public', template_folder='./templates/static')
 
@@ -49,7 +50,7 @@ def okr_main():
 
 
 # Viktor boi
-viktor_events = SlackEventAdapter(viktor_sss, "/vikapi/events", app)
+viktor_events = SlackEventAdapter(keys_dict['viktor'], "/vikapi/events", app)
 # # Wizzy boi
 # cah_events = SlackEventAdapter(cah_sss, "/cahapi/events", app)
 # # DND boi
