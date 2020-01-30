@@ -32,3 +32,8 @@ def contact():
 def tools():
     return render_template('tools.html')
 
+
+@hello_blueprint.route('/', subdomain='okr')
+def okr_main():
+    return render_template('okr_home.html')
+

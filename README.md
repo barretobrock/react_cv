@@ -20,3 +20,7 @@ NOTE: Learning how to setup on DO-side was from [here](https://www.freecodecamp.
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs
 ```
+
+## Update protocol
+ - `push` changes to server
+ - restart the Gunicorn instance (`sudo systemctl <cmd> reactcv.service`)

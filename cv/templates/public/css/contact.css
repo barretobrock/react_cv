@@ -1,0 +1,29 @@
+/*----------------------------------------------------------------------*/
+/* Styles for CV page */
+/*----------------------------------------------------------------------*/
+
+.contacts {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contacts ul {
+    text-align: center;
+}
+
+.contacts li {
+    list-style: none;
+    display: inline-block;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.contacts a {
+    border-bottom: 0;
+}
+
+.contacts svg {
+    color: var(--txt-grn);
+    width: 50px !important;
+    height: 50px;
+}
