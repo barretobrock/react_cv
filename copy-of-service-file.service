@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve React CV
+After=network.target
+
+[Service]
+User={user}
+Group=www-data
+WorkingDirectory=/home/{user}/react_cv/cv
+Environment="PATH=/home/{user}/venvs/react-cvenv/bin"
+ExecStart=/home/{user}/venvs/react-cvenv/bin/gunicorn --workers 3 --bind unix:react_cv.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
