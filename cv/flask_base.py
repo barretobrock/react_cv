@@ -59,7 +59,7 @@ def okr_main():
 
 @app.route('/vikapi/events', methods=['POST'])
 def viktor_events():
-    if request.form['token'] != keys_dict['viktor']:
+    if request.form['token'] != keys_dict['viktor']['VERIFY_TOKEN']:
         # Token submitted not the same as what's expected. Don't do anything
         return
 
@@ -74,7 +74,7 @@ def viktor_events():
 
 @app.route('/cahapi/events', methods=['POST'])
 def cah_events():
-    if request.form['token'] != keys_dict['cah']:
+    if request.form['token'] != keys_dict['cah']['VERIFY_TOKEN']:
         # Token submitted not the same as what's expected. Don't do anything
         return
 
