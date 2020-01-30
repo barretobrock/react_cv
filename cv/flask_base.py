@@ -50,10 +50,10 @@ def okr_main():
 
 # Viktor boi
 viktor_events = SlackEventAdapter(viktor_sss, "/vikapi/events", app)
-# Wizzy boi
-cah_events = SlackEventAdapter(cah_sss, "/cahapi/events", app)
-# DND boi
-dnd_events = SlackEventAdapter(dnd_sss, "/dndapi/events", app)
+# # Wizzy boi
+# cah_events = SlackEventAdapter(cah_sss, "/cahapi/events", app)
+# # DND boi
+# dnd_events = SlackEventAdapter(dnd_sss, "/dndapi/events", app)
 
 
 @viktor_events.on('reaction_added')
