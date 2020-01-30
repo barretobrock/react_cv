@@ -1,0 +1,6 @@
+# Slack Events API Endpoint
+
+## Tutorials
+ - [General Setup (avoid token verification)](https://www.digitalocean.com/community/tutorials/how-to-write-a-slash-command-with-flask-and-python-3-on-ubuntu-16-04)
+ - [Signing secret verification instructions](https://api.slack.com/docs/verifying-requests-from-slack)
+ - [Using SlackEventsAPI package in Python](https://github.com/slackapi/python-slack-events-api)

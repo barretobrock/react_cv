@@ -1,4 +1,11 @@
+import os
+import dotenv
 from flask import render_template, Blueprint
+from slackeventsapi import SlackEventAdapter
+
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+dotenv.load_dotenv(dotenv_path)
+slack_signing_secret = os.environ['SLACK_SIGNING_SECRET']
 
 hello_blueprint = Blueprint('hello', __name__)
 
@@ -37,3 +44,11 @@ def tools():
 def okr_main():
     return render_template('okr_home.html')
 
+
+sea = SlackEventAdapter(slack_signing_secret, "/vikapi/events", hello_blueprint)
+
+
+@sea.on('reaction_added')
+def reaction_added(event_data):
+    emoji = event_data['event']['reaction']
+    print(emoji)
