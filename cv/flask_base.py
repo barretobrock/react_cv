@@ -1,5 +1,6 @@
 import os
 from flask import render_template, Flask, request, jsonify
+from slacktools import SlackTools
 
 
 key_path = os.path.join(os.path.expanduser('~'), 'keys')
@@ -11,6 +12,9 @@ for k in keys:
         with open(os.path.join(key_path, f'{k.upper()}_SLACK_{t}')) as f:
             key_dict[t.lower()] = f.read().strip()
     keys_dict[k] = key_dict
+
+viktor = SlackTools('viktor', ['v!', 'viktor'], 'orbitalkettlerelay', keys_dict['viktor']['XOXP_TOKEN'],
+                    keys_dict['viktor']['XOXB_TOKEN'])
 
 app = Flask(__name__, static_folder='./templates/public', template_folder='./templates/static')
 
@@ -65,11 +69,10 @@ def viktor_events():
 
     event_data = request.form['event']
     if event_data['type'] == 'reaction_added':
-        payload = {
-            'text': f'Test was successful. Reaction detected: {event_data["reaction"]}',
-            'channel': event_data['item']['channel']
-        }
-        return jsonify(payload)
+        viktor.send_message(
+            event_data['item']['channel'],
+            f'Test was successful. Reaction detected: {event_data["reaction"]}'
+        )
 
 
 @app.route('/cahapi/events', methods=['POST'])
