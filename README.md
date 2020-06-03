@@ -24,3 +24,8 @@ sudo apt install -y nodejs
 ## Update protocol
  - `push` changes to server
  - restart the Gunicorn instance (`sudo systemctl <cmd> reactcv.service`)
+ 
+## Changing nginx
+ - /etc/nginx/sites-enabled/file
+ - sudo nginx -s reload
+ - sudo systemctl restart nginx.service
